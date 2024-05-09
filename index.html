@@ -44,7 +44,7 @@
       <img src="images/UCM-escudo.png" alt="Escudo de la UCM">
   </div>
   <ul>
-      <li>Defensa de la Tesis doctoral</li>
+      <li>PhD Defense</li>
       <li>Universidad Complutense de Madrid</li>
       <li><time datetime="2024-05-10">May 10, 2024</time></li>
   </ul>
@@ -849,13 +849,13 @@
 <!--************************* Slide ****************************-->
 
 <article>
-  <header> <h1> The Reduction procedure of homogeneous structures</h1></header>
+  <header> <h1> The reduction procedure of homogeneous structures</h1></header>
   <section> 
-    <p> Let $(\bar{M}, \bar{g})$ and $(M, g)$ be two pseudo-Riemannian manifold and $H$ a Lie group of isometries such that there is a map
+    <p> Let $(\bar{M}, \bar{g})$ and $(M, g)$ be two pseudo-Riemannian manifold and $G$ a Lie group of isometries such that there is a map
       \begin{align*}
           \pi \colon \bar{M} \to M
       \end{align*}
-      is an $H$-principal bundle with non-degenerate fibers. Indeed, $M = \bar{M}/H$ is the reduced manifold of $\bar{M}$ by the Lie group $H$.
+      is an $G$-principal bundle with non-degenerate fibers. Indeed, $M = \bar{M}/G$ is the reduced manifold of $\bar{M}$ by the Lie group $H$.
     </p>
     <p> If $\bar{M}$ is homogeneous, then $M$ is homogeneous.</p>
 
@@ -898,22 +898,45 @@
     <div class="problem space-before">
       <p></p>
       <ul>
-        <li> Can we study carefully the reduction process of Kähler spaces to almost contact metric?</li>
+        <li> Can we study carefully the reduction process of pseudo-Kähler spaces to almost contact metric?</li>
       </ul>
     </div>
-    <div class="flowchart space-before show-10" style="margin-top: 5vh;">
-      <div class="flow-step"> 
-        <p>
-          In <strong>[CC20]</strong>, if $(\bar{M},\bar{g},J)$ is <strong>Kähler</strong> and $\bar{S} \in \mathcal{K}_{2+4}(V)$
-        </p>
-      </div>
-      <div class="flow-arrow">↓</div> 
-      <div class="flow-step"> 
-        <p>
-          Then, $(M, g, \phi, \xi)$ is Sasakian, Kenmotsu or $\mathcal{C}_{12}(V)$ and $S$ is of linear type.
-        </p>
-      </div>
-    </div>
+</article>
+
+<!--************************* Slide ****************************-->
+<article>
+  <header> <h1> The reduced manifold is almost contact metric</h1> </header>
+  <section>
+    <div class="theorem"> 
+			<p><strong>[CC20]</strong>
+        Let $(\bar{M}, \bar{g} , \bar{J})$ be an almost pseudo-Hermitian manifold and let $\theta\in \mathfrak{X}(\bar{M})$ be a complete strictly regular unit vector field ($\varepsilon = \bar{g}(\theta, \theta)= \pm 1$). We consider that both $\bar{g}$ and $\bar{J}$ are invariant with respect to the uniparametric group $G$ defined by $\theta$. Then, the orbit space $(M, g, \phi, \xi, \eta)$ is an almost contact metric manifold, with
+        \begin{equation}\label{Equation 2}
+        g(X, Y) = \bar{g} ( X^H, Y^H), \quad \phi X = \pi_* (\bar{J} X^H) , \quad \xi = \pi_* (\bar{J} \theta),
+        \end{equation}
+      for any $X, Y\in TM$, where $X^H$ stands for the horizontal lift with respect to the mechanical connection, and $\eta$ is the dual form of $\xi$, that is, $\eta (\cdot) = g ( \cdot, \xi)$. 
+    </p>
+		</div>
+  </section>
+</article>
+
+
+
+<!--************************* Slide ****************************-->
+<article>
+  <header> <h1> The reduced homogeneous structure exists (2)</h1> </header>
+  <section>
+    <div class="theorem"> 
+			<p><strong>[CC20]</strong>
+	In the conditions of the last theorem. If $\bar{S}$ is an almost pseudo-Kähler homogeneous structure that is invariant under the group flow $G$ of a complete strictly regular unit vector field $\theta$. Suppose that 
+	\begin{equation*}
+		\tilde{\bar{\T}} \theta = \beta \otimes \theta
+	\end{equation*}
+where $\tilde{\bar{\T}}=\bar{\T} - \bar{S}$, and $\beta$ is a 1-form on $M$. Then, the tensor field $S$ on the orbit space $M=\bar{M}/G$ defined by
+	\begin{equation*}
+	S_X Y = \pi_* (\bar{S}_{X^H} Y^H)
+	\end{equation*} 
+	is a homogeneous almost contact metric structure on $(M, g, \phi, \xi, \eta)$ beloging to the class $\mathcal{S}_+(V) \oplus \mathcal{S}_{-,0}(V)$. </div>
+  </section>
 </article>
 
 <!--************************* Slide ****************************-->
@@ -921,7 +944,7 @@
   <header> <h1> The reduction theorem</h1> </header>
   <section>
     <div class="theorem"> 
-			<p><strong>[CC20]</strong> Let $(\bar{M},\bar{g},\bar{J})$ be a pseudo-Kähler manifold equipped with a pseudo-Kähler homogeneous structure $\bar{S}$  invariant under the flow group $G$ of a complete strictly regular unit vector field $\theta$. Assume that  $\bar{S} \in \mathcal{K}_2(\bar{V})+\mathcal{K}_4(\bar{V})$, parametrized by $G$-invariant vector fields $\chi_2$ and $\chi_4$. Then, the component $(S_{-,0})\in\mathcal{S}_{-,0}(V)$ of the reduced homogeneous almost-contact metric structure $S$ of the almost contact metric manifold $(M=\bar{M}/G,g,\phi,\xi,\eta)$ belongs to $\mathcal{C}_5(V) \oplus \mathcal{C}_6(V) \oplus \mathcal{C}_{12}(V)$ with projections
+			<p><strong>[CC20]</strong>  In the conditions of the last Theorems. If  $\bar{S} \in \mathcal{K}_2(\bar{V})+\mathcal{K}_4(\bar{V})$, parametrized by $G$-invariant vector fields $\chi_2$ and $\chi_4$. Then, the component $(S_{-,0})\in\mathcal{S}_{-,0}(V)$ of the reduced homogeneous almost contact metric structure $S$ of the almost contact metric manifold $(M=\bar{M}/G,g,\phi,\xi,\eta)$ belongs to $\mathcal{C}_5(V) \oplus \mathcal{C}_6(V) \oplus \mathcal{C}_{12}(V)$ with projections
         \begin{align*}
         (S_{-,0})_{(5)}(X,Y,Z) &= \varepsilon \omega(\chi)\left( \eta(Y) g(X, \phi Z) - \eta(Z) g(X, \phi Y) \right)\\
         (S_{-,0})_{(6)}(X,Y,Z) &= \varepsilon \eta(\pi_*\chi) \left( \eta(Z)  g(X, Y)  -  \eta(Y) g(X, Z) \right) \\
@@ -937,7 +960,7 @@
   <header> <h1> The reduction theorem (2)</h1> </header>
   <section>
     <div class="theorem"> 
-			<p><strong>[CC20]</strong> Let $(\bar{M},\bar{g},\bar{J})$ be a pseudo-Kähler manifold equipped with a pseudo-Kähler homogeneous structure $\bar{S}$ invariant under the flow group $G$ of a complete strictly regular unit vector field $\theta$. Assume that  $\bar{S} \in \mathcal{K}_2(\bar{V})+\mathcal{K}_4(\bar{V})$, parametrized by $G$-invariant vector fields $\chi_2$ and $\chi_4$. Then, the component $(S_{+})\in\mathcal{S}_{+}(V)$ of the reduced homogeneous almost-contact metric structure $S$ of the almost contact metric manifold $(M=\bar{M}/G,g,\phi,\xi,\eta)$ belongs to $\mathcal{CS}_2(V) \oplus \mathcal{CS}_4(V) \oplus  \mathcal{CS}_6(V)$, and its expression is 
+			<p><strong>[CC20]</strong>  In the conditions of the last Theorems. If  $\bar{S} \in \mathcal{K}_2(\bar{V})+\mathcal{K}_4(\bar{V})$, parametrized by $G$-invariant vector fields $\chi_2$ and $\chi_4$. Then, the component $(S_{+})\in\mathcal{S}_{+}(V)$ of the reduced homogeneous almost contact metric structure $S$ of the almost contact metric manifold $(M=\bar{M}/G,g,\phi,\xi,\eta)$ belongs to $\mathcal{CS}_2(V) \oplus \mathcal{CS}_4(V) \oplus  \mathcal{CS}_6(V)$, and its expression is 
         \begin{align*}
         (S_+) (X,Y,Z) 
         &= \quad g(X,Y) g(Z,  \rho) - \varepsilon \eta(X) \eta(Y)g(Z, \rho)  -g(X,Z) g(Y,  \rho)\\ 
@@ -947,6 +970,26 @@
         where $\chi =\chi_2+\chi_4$, $\hat{\chi} =\chi_2- \chi_4$ and $\rho = \pi_* \chi - \eta(\pi_* \chi) \xi $, $\hat{\rho} = \pi_* \hat{\chi} - \eta(\pi_* \hat{\chi}) \xi $.
       </p>
 		</div>
+  </section>
+</article>
+
+<!--************************* Slide ****************************-->
+<article>
+  <header> <h1> Conclusions</h1> </header>
+  <section>
+    <div class="flowchart space-before show-10" style="margin-top: 5vh;">
+      <div class="flow-step"> 
+        <p>
+          In <strong>[CC20]</strong>, if $(\bar{M},\bar{g},J)$ is <strong>Kähler</strong> and $\bar{S} \in \mathcal{K}_{2+4}(V)$
+        </p>
+      </div>
+      <div class="flow-arrow">↓</div> 
+      <div class="flow-step"> 
+        <p>
+          Then, $(M, g, \phi, \xi)$ is Sasakian, Kenmotsu or $\mathcal{C}_{12}(V)$ and $S$ is of linear type.
+        </p>
+      </div>
+    </div>
   </section>
 </article>
 
@@ -1042,7 +1085,7 @@
   <section>
     <div style="font-size: 62.5%;">
       <div class="flow-step bg-yellow-center" style="width: 22.5%;"> $(M,g)$ is a Riemannian homogeneous manifold</div>
-      <div class="flow-arrow" style="display: inline; margin: 0 0 0 0;" >→</div>
+      <div class="flow-arrow" style="display: inline; margin: 0 0 0 0; width: 30%" > → </div>
       <div class="flow-step bg-yellow-center" style="width: 22.5%;">There exists a linear connection $\TT$ such that: \[ \TT \curv = 0,\ \TT \tors = 0, \ \TT g = 0 \]</div> 
     </div><div style="font-size: 62.5%;" class="space-before">
       <div class="flow-arrow" style="position: absolute; left: 56.5%; top: 15.25%; font-size: 12vh;">↘</div>
@@ -1473,7 +1516,7 @@
         <li>the connection \( \T \) restricts to the leaves and they are totally geodesic,</li>
         <li>the leaves are flat manifolds.</li>
       </ul>
-      <p>Furthermore, if in addition \( \TT = \T - S \) is complete, \( M \) is Fedosov homogeneous.</p>
+      <p>Furthermore, if \( \TT = \T - S \) is complete, \( M \) is Fedosov homogeneous.</p>
     </div>  
   </section>
 </article>
@@ -1521,7 +1564,7 @@
   <section>
     <p> Let $(M,g)$ be a Riemannian manifold and let $G \subset \mathrm{Isom}(M,g)$ be a closed Lie group.</p>
     <div class="definition space-before"> 
-      A Riemannian $G$-manifold $(M,g)$ is a regular cohomogeneity one Riemannian manifold if all the orbits are principal and hypersurfaces.
+      A Riemannian $G$-manifold $(M,g)$ is a regular cohomogeneity one Riemannian manifold if all the orbits are principal and orientable hypersurfaces.
     </div>
     <p class="space-before"> This describes a foliation whose leaves are given by the integrable distibution,
       $$
@@ -1563,9 +1606,9 @@
   <header> <h1>Ideas of the proof:</h1> </header>
   <section>
     <p>
-      <strong>1.</strong> The real hyperbolic space $\mathbb{R}\mathrm{H}(n)$ with the hyperbolic metric of constant scalar curvature equal to  $-1$ 
-      is isometric to the warped product $(\R\times_f \R ^{n-1}, g = dt^2 + f(t) ^2 g_{\R^{n-1}})$, with $f(t) = e^{-t}$. 
-      Let $G= \S\O (n-1) \R^{n-1}$ be isometric Lie group acting with cohomogeneity one in the second factor. 
+      <strong>1.</strong> The real hyperbolic space $\mathbb{R}\mathrm{H}(n)$ with the hyperbolic metric of constant sectional curvature equal to  $-1$ 
+      is isometric to the warped product $(\R\times_f \R ^{n-1}, g = dt^2 + f(t) ^2 g_{\R^{n-1}})$, with warped function $f(t) = e^{-t}$. 
+      Let $G= \mathrm{Isom}(\R^{n-1}) = \S\O (n-1) \R^{n-1}$ be the group of isometries of the second factor such that it acts with cohomogeneity one in the second factor. 
     </p>
     <div class="bg-yellow-center show-10"> We have a cohomogeneity one manifold in the conditions of the theorem.</div>
     <p  class="space-before show-20"><strong>2.</strong>  The vector field $\xi = \frac{\partial}{\partial t}$ defines the foliation. Its flow is generated by the Lie group $\R$ acting in the first factor. This action is <strong>non-isometric</strong>.
@@ -1812,7 +1855,7 @@
         <img src="images/UCM-escudo.png" alt="Escudo de la UCM">
     </div>
     <ul>
-        <li>Defensa de la Tesis doctoral</li>
+        <li>PhD Defense</li>
         <li>Universidad Complutense de Madrid</li>
         <li><time datetime="2024-05-10">May 10, 2024</time></li>
     </ul>
