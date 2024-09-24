@@ -156,10 +156,12 @@ profile-photo .img{
 .profile-text h5{
   color: black;
   font-size: 20px;
+  margin-bottom: 20px;
 }
 .profile-text h1{
   color: #1E90FF;
   font-size: 4rem; 
+  margin-bottom: 20px;
 }
 .profile-text p{
   color:black;
