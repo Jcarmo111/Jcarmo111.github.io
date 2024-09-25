@@ -1,0 +1,51 @@
+/****************************************************
+* Printing slides:
+- Seleccionar "Imprimir co cadro de diálogo de sistema" e en "Adobe" ir a "Preferencias".  En "Adobe PDF Page Size" darlle a "Add..." e crear un tamaño da proporción necesaria (p. ex. 320mm x 200mm para 16:10).  Salvar.
+- A seguinte vez que se imprima aparecerá ese tamaño, e imprimir normal.
+- Con este método non se conservan as animacións.
+*****************************************************/
+
+/* Main blocks
+*****************************************************/
+body {
+    font-size: calc(var(--text-size) - 0.1vh); 
+}
+
+article {
+    display: block;
+}
+
+[class*="show-"] {
+    visibility: visible;
+    opacity: 1;
+    transition: none;
+    filter: none;
+}
+
+#title button, header button {
+	display: none;
+}
+
+
+@media print {
+    @page { 
+        margin: 0; 
+        /* size: 400px 300px landscape; */
+    }
+
+    :root {
+        --a-link: blue;
+        --a-visited: transparent;
+        --a-hover: transparent;
+    }
+
+    body {
+        height: 100%;
+    }
+    
+	article {
+		page-break-after: always;
+        page-break-inside: avoid;
+	}  
+}
+

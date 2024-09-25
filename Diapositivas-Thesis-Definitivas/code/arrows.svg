@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="en"
+ viewBox="0,0 82,62" width="82" height="62">
+ <title>Arrows and shadows</title>
+ <defs>
+  <filter id="shadow" x="-0.1" y="-0.1" width="125%" height="130%">
+   <feOffset result="offOut" in="SourceAlpha" dx="1" dy="0.5"/>
+   <feGaussianBlur result="blurOut" in="offOut" stdDeviation="0.6"/>
+   <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+  </filter>
+  <use id="implies" href="#right-arrow">
+   <title>Implies</title>
+  </use>
+  <use id="iff" href="#left-right-arrow">
+   <title>If and only if</title>
+  </use>
+
+
+
+ </defs>
+ <linearGradient id="gradient-fill" x1="50%" y1="0%" x2="50%" y2="100%">
+  <stop stop-color="hsl(120, 73%, 95%)" offset="0"/>
+  <stop stop-color="hsl(120, 73%, 75%)" offset="0.3"/>
+  <stop stop-color="hsl(120, 73%, 95%)" offset="1"/>
+ </linearGradient>
+ <symbol id="right-arrow" viewBox="0,0 40,22">
+  <title>Right arrow</title>
+  <path d="M1,11 V6 H29 V2 Q29,1 29.71,1.70 L39,11 29.71,20.30 Q29,21 29,20 V16 H1 V11 z"/>
+ </symbol>
+ <symbol id="down-arrow" viewBox="0,0 22,40" >
+  <title>Down arrow</title>
+  <path d="M11,1 H6 V29 H2 Q1,29 1.70,29.71 L11,39 20.30,29.71 Q21,29 20,29 H16 V1 H11 z"/>
+ </symbol>
+ <symbol id="left-right-arrow" viewBox="0,0 40,22">
+  <title>Left and right arrow</title>
+  <path d="M11,6 H29 V2 Q29,1 29.71,1.70 L39,11 29.71,20.30 Q29,21 29,20
+   V16 H11 V20 Q11,21 10.29,20.30 L1,11 10.29,1.70 Q11,1 11,2 z"/>
+ </symbol>
+ <symbol viewBox="0,0 40,22" id="back-arrow">
+  <title>Back arrow</title>
+  <path d="M10,6 Q22,20 33,1 L33,8 39,9 Q22,29 5,11 L1,15 L1,2 L14,2 z"/>
+ </symbol>
+
+
+ <use href="#right-arrow" x="0" y="0" width="40" height="22" fill="lightgreen"/>
+ <use href="#back-arrow" x="40" y="0" width="40" height="22" fill="lightblue" filter="url(#shadow)"/>
+ <use href="#left-right-arrow" x="0" y="22" width="40" height="22" fill="lightyellow" filter="url(#shadow)"/>
+ <use href="#down-arrow" x="40" y="22" width="22" height="40" fill="pink"/>
+</svg>
+
+<svg width="122.88" height="122.433" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" enable-background="new 0 0 122.88 122.433" version="1.1">
+
+ <g id="split-arrow">
+  <title>Layer 1</title>
+  <g transform="rotate(45, 65.8607, 71.1372)" id="svg_1">
+   <polygon id="svg_2" points="134.72534894943237,71.13746190071106 63.35789442062378,104.42296147346497 63.35789442062378,82.99748539924622 -3.003894329071045,82.99748539924622 -3.003894329071045,59.27417302131653 63.35789442062378,59.27417302131653 63.35789442062378,37.8514130115509 134.72534894943237,71.13746190071106 " clip-rule="evenodd" fill-rule="evenodd"/>
+  </g>
+ </g>
+</svg>

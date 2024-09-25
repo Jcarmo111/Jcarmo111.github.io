@@ -1,0 +1,821 @@
+/****************************************************
+Table of contents:
+1. Main blocks
+2. Title page
+3. Header
+4. Contents page
+5. Text
+6. Links
+7. Common classes
+8. Colors
+9. Display boxes
+10. Lists
+11. Figures
+*****************************************************/
+
+@import url(
+    'https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); 
+@import url(
+    'https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+/* Main blocks
+*****************************************************/
+:root {
+    --screen-width: 177vh; /* 4:3 -> 133, 16:9 -> 177 16:10 -> 160  Para imprimir ->141*/ 
+    --bg-color: white;
+    --text-color: black;
+    --text-size: 4vh; /* Proportional to screen size */
+    --strong-color: red;
+    --math-color: purple;
+    --code-color: indigo;
+    --sec-margin-top: 1rem;
+    --side-margin: 10vh; /* 4:3 -> 1em, 16:10 -> 2em */
+    --par-sep: 0.3em;
+    --section-display: flex; /* problems: no collapsing margins, no floats */
+    --vertical-justify: flex-start;
+
+    --a-link: blue;
+    --a-visited: purple;
+    --a-hover: chocolate;
+    --button-color: white;
+
+    --title-color: blue;
+
+    --header-color: linear-gradient(to bottom right, black, blue);
+    --header-text-color: white;
+    --header-height: 2.5em;
+    --header-font-size: 111%;
+
+    --box-side-margin: -0.3em;
+    --shadow: 0 0.15rem 0.3rem 0 lightgrey, 0 0.2rem 0.7rem 0 lightgrey;
+    --border: 0.3rem;
+
+    --content-lemma: "Lemma. ";
+    --content-theorem: "Theorem. ";
+    --content-proposition: "Proposition. ";
+    --content-corollary: "Corollary. ";
+    --content-proof: "Proof. ";
+    --content-definition: "";
+    --content-problem: "Problem. ";
+    --content-solution: "Solution. ";
+    --content-example: "Ejemplo. ";
+    --content-remark: "Remark. ";
+    --content-exercise: "Exercise. ";
+}
+
+body {
+    width: var(--screen-width, 133vh);
+    box-sizing: border-box;
+    font-size: var(--text-size, 4vh);
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    color: var(--text-color, black);
+    line-height: 1.5;
+    background-color: black;
+    margin: 0 auto;
+}
+
+main {
+    width: 100%;
+    background-color: var(--bg-color, white);
+}
+
+article {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+article.current {
+	display: block;
+}
+
+section {
+    position: relative;
+    height: calc(100vh - var(--header-height) - 3 * var(--sec-margin-top));
+    margin: var(--sec-margin-top) var(--side-margin);
+    display: var(--section-display); 
+    flex-flow: column nowrap;
+    justify-content: var(--vertical-justify, flex-start);
+}
+
+section > *:first-child {
+    margin-top: 4vh;
+}
+
+header {
+    height: var(--header-height);
+    margin: 0;
+    background: var(--header-color);
+    box-shadow: 0 0.2rem 0.3rem grey;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+[class*="show-"] {
+	opacity: 0.3;
+	filter: blur(0.1rem) saturate(20%);
+	pointer-events: none;
+	transition: opacity 0.5s, filter 0.5s;
+}
+
+.shown {
+	opacity: 1;
+	filter: blur(0) saturate(100%);
+	pointer-events: auto;
+}
+
+.almostshown {
+	opacity: 0.3;
+	filter: blur(0.1rem) saturate(20%);
+	pointer-events: none;
+}
+
+.erased {
+    visibility: hidden;
+	pointer-events: none;
+}
+
+#svg-code {
+    position: fixed;
+}
+
+
+/* Title page
+*****************************************************/
+#title section {
+    height: 100%;
+}
+
+#title h1, #title h2, #title h3 {
+    text-align: center;
+    /*font-family: Times, Times, serif;*/
+}
+
+#title h1 {
+    font-size: 200%;
+    margin: calc(4*var(--par-sep)) 0 calc(2*var(--par-sep));
+    color: var(--title-color);
+    text-shadow: 0 0 0.1rem grey;
+}
+
+#title h2 {
+    font-size: 135%;
+    border-top: 1px solid black;
+    padding-top: calc(4*var(--par-sep));
+}
+
+#title footer {
+    margin-top: auto;
+    margin-bottom: calc(4*var(--par-sep));
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+#title footer img {
+    max-height: 20vh;
+    margin-bottom: auto;
+    margin-right: calc(0.5*var(--side-margin));
+}
+
+#title footer ul {
+    list-style-type: none;
+    margin: 0 0 0 auto;
+}
+
+#title footer li:first-child {
+    color: blue;
+    font-size: 75%;
+}
+
+#title footer li:not(:first-child) {
+    /*color: blue;*/
+    font-size: 50%;
+}
+
+
+/* Header
+*****************************************************/
+header h1 {
+    text-shadow: 0 0 0.3rem var(--text-color, black);
+    margin-left: calc(0.3*var(--side-margin));
+    font-size: var(--header-font-size);
+}
+
+header h1, header .MathJax, header code {
+    color: var(--header-text-color);
+}
+
+header nav {
+    margin-top: calc(0.5*var(--par-sep));
+    margin-left: auto;
+    align-self: flex-start;
+}
+
+header button:hover {
+	cursor: pointer;
+}
+
+#title button, header button {
+	background-color: transparent;
+	color: var(--button-color, brown);
+	border: none;
+    font-size: var(--header-font-size);
+	margin-right: 0.5em;
+	padding: 0;
+}
+
+/* Contents page
+*****************************************************/
+.contents {
+    --vertical-justify: flex;
+}
+
+.contents section {
+    font-size: 85%;
+}
+
+.contents section h1 {
+    margin-top: var(--par-sep);
+}
+
+.contents section h2 {
+    margin-left: calc(2 * var(--par-sep));
+}
+
+.contents section h1 a:link, .contents section h1 a:visited {
+    color: black;
+}
+
+.contents section h2 a:link, .contents section h2 a:visited {
+    color: DimGrey;
+}
+
+.contents section h1 a:hover, .contents section h2 a:hover {
+    color: darkgrey;
+}
+
+.contents h2 .MathJax {
+    --math-color: DimGrey;
+}
+
+
+
+/* Text
+*****************************************************/
+h1, h2, h3 {
+    margin: var(--par-sep, 0.3em) 0 var(--par-sep, 0.3em) 0;
+    text-align: justify;
+}
+
+h1 {
+    font-size: 125%;
+}
+
+h2 {
+    font-size: 115%;
+}
+
+h3 {
+    font-size: 105%;
+}
+
+p {
+    padding: 0 0 var(--par-sep, 0.3em);
+}
+
+strong {
+    font-weight: bold;
+    color: var(--strong-color, red);
+}
+
+blockquote {
+    color: blue;
+}
+
+code, pre {
+    font-family: "Inconsolata", monospace;
+    line-height: 1.2;
+    color: var(--code-color);
+}
+
+
+/* Links
+*****************************************************/
+a {
+    text-decoration: var(--a-link, brown);
+}
+a:link {
+    color: var(--a-link, purple);
+}
+a:visited {
+    color: var(--a-visited, purple);
+}
+a:hover {
+    color: var(--a-hover, chocolate);
+}
+
+
+/* Common classes
+*****************************************************/
+.vertical-justify {
+    justify-content: space-around;
+}
+
+.center {
+    text-align: center;
+}
+
+.smaller {
+    font-size: 75%;
+}
+
+.bigger {
+    font-size: 125%;
+}
+
+.space-after {
+	margin-bottom: calc(2*var(--par-sep));
+}
+
+.space-before {
+	margin-top: calc(5*var(--par-sep)) !important;
+}
+
+.display-block {
+    display: block;
+}
+
+
+/* Colors
+*****************************************************/
+.MathJax {
+    color: var(--math-color);
+}
+
+.bg-pink {
+    --color-start: hsl(350, 100%, 95%);
+    --color-end: hsl(350, 100%, 88%);
+    --color-solid: pink;
+}
+
+.definition, .bg-yellow {
+    --color-start: hsl(60, 100%, 95%);
+    --color-end: hsl(60, 100%, 85%);
+    --color-solid: lightyellow;
+}
+
+.lemma, .theorem, .proposition, .corollary, .bg-green {
+    --color-start: hsl(120, 73%, 95%);
+    --color-end: hsl(120, 73%, 75%);
+    --color-solid: lightgreen;
+}
+
+.problem, .bg-blue {
+    --color-start: hsl(180, 100%, 97%);
+    --color-end: hsl(195, 53%, 79%);
+    --color-solid: lightblue;
+}
+
+.solution {
+    --color-start: hsl(180, 100%, 97%);
+    --color-end: hsl(180, 100%, 94%);
+    --color-solid: lightcyan;
+}
+
+.example, .remark, .exercise  {
+    --color-start: hsl(0, 0%, 97%);
+    --color-end: hsl(0, 0%, 86%);
+    --color-solid: white;
+}
+
+.bg-white  {
+    --color-solid: white;
+}
+
+.proof {
+    --color-start: hsl(120, 76%, 95%);
+    --color-end: hsl(120, 76%, 85%);
+    --color-solid: hsl(120, 73%, 90%);
+}
+
+
+/* Display boxes
+*****************************************************/
+[class^="bg-"] {
+    margin-left: var(--box-side-margin, -0.3em);
+    margin-right: var(--box-side-margin, -0.3em);
+    padding-left: calc(-1*var(--box-side-margin));
+    padding-right: calc(-1*var(--box-side-margin));
+}
+
+.two-boxes {
+    width: 100%;
+    margin-top: var(--par-sep, 0.3em);
+    margin-bottom: var(--par-sep, 0.3em);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+h1 + .two-boxes {
+    margin-top: 0;
+}
+
+.two-boxes:first-child {
+    margin-top: 0;
+}
+
+.two-boxes div:first-of-type, .two-boxes div:last-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0; /* Cambiado de 1 1 0 a 0 1 auto */
+    border-radius: var(--border, 0);
+    box-shadow: var(--shadow);
+}
+
+.distribute.two-boxes div:first-of-type, 
+.distribute.two-boxes div:last-of-type {
+    flex: auto;
+}
+
+.two-boxes svg, .two-boxes .arrow-shadow {
+    width: 10%;
+    height: 2em;
+    margin: 0 1%;
+    align-self: center;
+    overflow: visible;
+}
+
+.two-boxes p {
+    text-align: justify;
+}
+
+.definition, .lemma, .theorem, .proposition, .corollary, .proof,
+.example, .exercise, .remark, .problem, .solution, .boxed {
+    margin: var(--par-sep) var(--box-side-margin);
+    padding: var(--par-sep) calc(-1*var(--box-side-margin));
+    border-radius: var(--border, 0);
+    box-shadow: var(--shadow);
+    background: linear-gradient(
+        to bottom, var(--color-start), var(--color-end));
+}
+
+h1 + .two-boxes, h1 + .definition, h1 + .lemma, h1 + .theorem, 
+h1 + .proposition, h1 + .corollary, h1 + .proof, h1 + .example, h1 + .exercise, 
+h1 + .remark, h1 + .problem, h1 + .solution, h1 + .boxed {
+    margin-top: 0vh;
+}
+
+.lemma > p:first-of-type::before {
+    font-weight: bold;
+    content: var(--content-lemma, "Lemma. ");
+}
+
+.theorem > p:first-of-type::before {
+    font-weight: bold;
+    content: var(--content-theorem, "Theorem. ");
+}
+
+.proposition > p:first-of-type::before {
+    font-weight: bold;
+    content: var(--content-proposition, "Proposition. ");
+}
+
+.corollary > p:first-of-type::before {
+    font-weight: bold;
+    content: var(--content-corollary, "Corollary. ");
+}
+
+.definition > p:first-of-type::before {
+    font-weight: bold;
+    content: var(--content-definition, "");
+}
+
+.example > p:first-of-type::before {
+    font-weight: bold;
+    content: var(--content-example, "Example. ");
+}
+
+.exercise > p:first-of-type::before {
+    font-weight: bold;
+    content: var(--content-exercise, "Exercise. ");
+}
+
+.remark > p:first-of-type::before {
+    font-weight: bold;
+    content: var(--content-remark, "Remark. ");
+}
+
+.proof > p:first-of-type::before {
+    font-weight: bold;
+    content: var(--content-proof, "Proof. ");
+}
+
+.problem > p:first-of-type::before {
+    font-weight: bold;
+    content: var(--content-problem, "Problem. ");
+}
+
+.solution > p:first-of-type::before {
+    font-weight: bold;
+    content: var(--content-solution, "Solution. ");
+}
+
+p.boxed {
+    padding-top: 0;
+}
+
+[class*="bg-"] {
+    background: var(--color-solid);
+    background: linear-gradient(
+        to bottom, var(--color-start), var(--color-end));
+    fill: var(--color-solid);
+}
+
+svg [class*="bg-"] {
+    filter: drop-shadow(0.1rem 0.2rem 0.2rem gray); 
+}
+
+
+/* Lists
+*****************************************************/
+ul {
+    margin: 0 0 0 calc(0.8*var(--side-margin));
+    list-style-type: square;
+}
+
+ul li, ol li {
+    margin-bottom: var(--par-sep, 0.3em);
+}
+
+ul li ul {
+    margin-top: var(--par-sep, 0.3em);
+}
+
+ol {
+    padding: 0;
+    counter-reset: section;
+    list-style-type: none;
+}
+
+ol li::before {
+    counter-increment: section;
+    content: counter(section) ". ";
+}
+
+ol li ol {
+    counter-reset: li;
+    list-style-type: none;
+    margin-left: calc(0.5*var(--side-margin));
+}
+
+ol li li::before {
+    counter-increment: li;
+    content: counter(section) ". " counter(li) ". ";
+}
+
+ol li ol li {
+    margin: 0 0 0 var(--side-margin);
+    text-indent: calc(-1*var(--side-margin));
+}
+
+ul.no-bullet {
+ 	list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Figures
+*****************************************************/
+figure img {
+    width: 25vh;
+}
+
+.pictures-small img, .pictures-small svg {
+    max-height: 25vh;
+}
+
+.pictures-tiny img, .pictures-tiny svg {
+    max-height: 15vh;
+}
+
+.pictures-medium img, .pictures-medium svg {
+    max-height: 50vh;
+}
+
+.pictures-big img, .pictures-big svg {
+    min-height: 70vh;
+}
+
+.row-pictures {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.row-pictures figure {
+	flex: 0 1 auto;
+	margin: 0 auto;
+    box-sizing: border-box;
+	width: auto;
+}
+
+.picture-text {
+    display: grid;
+    grid-template-columns: 0.14fr 0.05fr 0.81fr;
+    margin: 0 auto 0;
+    text-align: left;    
+}
+
+.picture-text-picture-text {
+    display: grid;
+    grid-template-columns: 0.18fr 0.02fr 0.28fr 0.04fr 0.18fr 0.02fr 0.28fr;
+    font-size: 80%;
+    margin-top: 5%;
+}
+
+[class*="picture"] img {
+    border-radius: var(--border, 0);
+    transition: transform 0.5s;
+}
+
+[class*="picture"] img:hover {
+    box-shadow: var(--shadow);
+    transform: scale(1.5);
+    background: var(--bg-color, white);
+}
+
+.picture-side img:hover {
+    transform: scale(1.5) translateX(-1em);
+}
+
+.column1, .column2, .column3, .column4 {
+    margin: 0 0 calc(2*var(--par-sep));
+    padding: 0 0 5% 0;
+}
+
+.column1 {
+    grid-column: 1;
+}
+
+.column2 {
+    grid-column: 3;
+}
+
+.column1 img, .column3 img {
+    width: 100%;
+}
+
+.column3 {
+    grid-column: 5;
+}
+
+.column4 {
+    grid-column: 7;
+}
+
+.picture-text-picture-text .column2, .picture-text-picture-text .column4 {
+    padding-top: 20%;
+}
+
+
+/* CSS arrows */
+.arrow-shadow {
+    filter: drop-shadow(0 0.15rem 0.3rem hsl(0, 0%, 40%));
+    margin: 0 1%;
+}
+
+.implies, .right-arrow {
+    clip-path: polygon(
+        2% 70%, 75% 70%, 75% 90%, 98% 50%, 75% 10%, 75% 30%, 2% 30%);
+    height: 4rem;
+    width: 100%;
+}
+
+.iff, .left-right-arrow {
+    clip-path: polygon(2% 50%, 27% 90%, 27% 70%, 73% 70%, 73% 90%, 98% 50%,
+        73% 10%, 73% 30%, 27% 30%, 27% 10%);
+    height: 4rem;
+    width: 100%;
+}
+
+.figcaption {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bg-yellow-center {
+    --color-start: hsl(60, 100%, 95%);
+    --color-end: hsl(60, 100%, 85%);
+    --color-solid: lightyellow;
+    text-align: center; /* Centrar texto */
+    display: inline-block; /* Hacer que el div se ajuste al contenido */
+    padding: 1.5vh; /* Espacio alrededor del texto */
+    margin: 1vh auto; /* Margen superior e inferior, y centrar horizontalmente */
+    border-radius: 5px; /* Bordes redondeados para un aspecto más suave */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera para profundidad */
+}
+
+.flowchart {
+    text-align: center;
+}
+
+.flow-step {
+    margin: 0 0;
+}
+
+.flow-step, .split {
+    margin: 0 0;
+}
+
+.flow-arrow {
+    margin: -1vh 0 2vh 0;
+    font-size: 10vh;
+    line-height: 1;
+}
+
+.split > div {
+    display: inline-block;
+    text-align: center;
+    margin: 0 5vh;
+}
+
+.split .flow-arrow {
+    display: block; /* Asegura que las flechas estén sobre los textos */
+}
+
+.open-problem {
+    --color-solid: lightblue; /* O cualquier color de fondo que prefieras */
+    border: 1px solid black; /* Si deseas un borde alrededor del problema */
+    padding: 10px;
+    margin: 10px 0; /* Espacio antes y después del problema abierto */
+}
+
+.open-problem > p:first-of-type::before {
+    font-weight: bold;
+    content: "Open Problem. ";
+    /* Otras propiedades de estilo que desees aplicar al texto del problema */
+}
+
+
+.references ul {
+    list-style: none;
+    padding: 0 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 1vh;
+}
+
+.references li {
+    font-size: 2.5vh;
+    display: contents; /* Esto hace que los hijos de li se comporten como si fueran hijos directos de ul */
+}
+
+.reference-label {
+    text-align: left;
+    font-weight: bold;
+}
+
+.reference-text {
+    text-align: justify;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+    gap: 10px; /* Espacio entre las columnas y filas */
+  }
+  
+  .grid-item {
+    /* Estilos para los elementos de la cuadrícula */
+    padding: 10px;
+    border: none;
+    text-align: center;
+  }
+  
