@@ -1,34 +1,259 @@
 /*****************************************
-* Style sheet for custom styles
-*
+* Professional Style Sheet for Thesis Defense
+* Enhanced with modern academic design
 *****************************************/
 
+/* ============================================
+   CSS CUSTOM PROPERTIES - Professional Theme
+   ============================================ */
+:root {
+    /* Professional Color Palette */
+    --primary-blue: #1a5490;
+    --primary-blue-dark: #0d3d6b;
+    --accent-teal: #006b7d;
+    --accent-gold: #b8860b;
+
+    /* Sophisticated Gradients */
+    --gradient-header: linear-gradient(135deg, #1a5490 0%, #0d3d6b 50%, #006b7d 100%);
+    --gradient-definition: linear-gradient(135deg, #fffef7 0%, #fff9e6 100%);
+    --gradient-theorem: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    --gradient-problem: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+
+    /* Enhanced Shadows */
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-strong: 0 8px 16px rgba(0, 0, 0, 0.15), 0 12px 32px rgba(0, 0, 0, 0.1);
+
+    /* Typography */
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+}
+
+/* ============================================
+   BACKGROUND & LAYOUT
+   ============================================ */
 article {
     background-image: url("pics/berndt-difuse.png");
     background-position: 10vh 12vh;
     background-repeat: no-repeat;
     background-size: 75vh auto;
+    background-blend-mode: soft-light;
 }
 
-/*debug 
-table, td, th {
-    border: 1px solid black;
-}*/
+/* Professional Header Styling */
+header {
+    background: var(--gradient-header) !important;
+    box-shadow: var(--shadow-medium) !important;
+    border-bottom: 3px solid var(--accent-gold);
+}
 
+header h1 {
+    font-weight: var(--font-weight-semibold) !important;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   ENHANCED CONTENT BOXES
+   ============================================ */
+
+/* Definition Boxes - Warm Professional Look */
+.definition {
+    background: var(--gradient-definition) !important;
+    border-left: 5px solid var(--accent-gold) !important;
+    box-shadow: var(--shadow-soft) !important;
+    padding: 1.2rem 1.5rem !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+
+.definition:hover {
+    box-shadow: var(--shadow-medium) !important;
+    transform: translateY(-2px);
+}
+
+/* Theorem Boxes - Cool Professional Look */
+.theorem, .lemma, .proposition, .corollary {
+    background: var(--gradient-theorem) !important;
+    border-left: 5px solid var(--primary-blue) !important;
+    box-shadow: var(--shadow-soft) !important;
+    padding: 1.2rem 1.5rem !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+
+.theorem:hover, .lemma:hover, .proposition:hover, .corollary:hover {
+    box-shadow: var(--shadow-medium) !important;
+    transform: translateY(-2px);
+}
+
+/* Problem Boxes - Teal Professional Look */
+.problem {
+    background: var(--gradient-problem) !important;
+    border-left: 5px solid var(--accent-teal) !important;
+    box-shadow: var(--shadow-soft) !important;
+    padding: 1.2rem 1.5rem !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+
+.problem:hover {
+    box-shadow: var(--shadow-medium) !important;
+    transform: translateY(-2px);
+}
+
+/* Enhanced Two-Box Layout */
+.two-boxes {
+    gap: 2rem;
+}
+
+.two-boxes > div {
+    padding: 1.5rem !important;
+    border-radius: 10px !important;
+    box-shadow: var(--shadow-soft) !important;
+    transition: all 0.3s ease;
+}
+
+.two-boxes > div:hover {
+    box-shadow: var(--shadow-medium) !important;
+    transform: translateY(-3px);
+}
+
+/* Highlighted Background Centers */
+.bg-yellow-center {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
+    border-left: 4px solid var(--accent-gold);
+    padding: 1rem 1.5rem !important;
+    border-radius: 8px;
+    box-shadow: var(--shadow-soft);
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* ============================================
+   TYPOGRAPHY ENHANCEMENTS
+   ============================================ */
+
+/* Title Slide Enhancement */
+#title h1 {
+    color: var(--primary-blue) !important;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.15) !important;
+    font-weight: var(--font-weight-bold) !important;
+    letter-spacing: 0.01em;
+}
+
+#title h2 {
+    color: var(--primary-blue-dark);
+    font-weight: var(--font-weight-semibold) !important;
+    border-top: 2px solid var(--accent-gold) !important;
+}
+
+#title h3 {
+    color: #374151;
+    font-weight: var(--font-weight-medium) !important;
+}
+
+/* Content Headings */
+h1 {
+    color: var(--primary-blue-dark);
+    font-weight: var(--font-weight-semibold) !important;
+}
+
+h2 {
+    color: var(--accent-teal);
+    font-weight: var(--font-weight-medium) !important;
+}
+
+strong {
+    color: var(--primary-blue) !important;
+    font-weight: var(--font-weight-bold) !important;
+}
+
+/* Mathematical Content */
+.MathJax {
+    color: var(--primary-blue-dark) !important;
+}
+
+/* ============================================
+   IMPROVED LINKS & NAVIGATION
+   ============================================ */
+a:link {
+    color: var(--primary-blue) !important;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+a:visited {
+    color: var(--accent-teal) !important;
+}
+
+a:hover {
+    color: var(--accent-gold) !important;
+    border-bottom: 1px solid var(--accent-gold);
+}
+
+/* Contents Page Links */
+.contents section h1 a:link, .contents section h1 a:visited {
+    color: var(--primary-blue-dark) !important;
+    font-weight: var(--font-weight-semibold);
+}
+
+.contents section h2 a:link, .contents section h2 a:visited {
+    color: #4b5563 !important;
+}
+
+.contents section h1 a:hover, .contents section h2 a:hover {
+    color: var(--accent-gold) !important;
+}
+
+/* ============================================
+   LISTS & BULLETS
+   ============================================ */
+ul li {
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+ul li::marker {
+    color: var(--accent-teal);
+    font-size: 1.1em;
+}
+
+/* ============================================
+   TABLES & COLUMNS
+   ============================================ */
 .two-columns {
     width: 100%;
     table-layout: fixed;
     border-collapse: separate;
+    border-spacing: 1rem;
 }
 
 .two-columns th {
     height: 2em;
     text-align: center;
     font-size: 120%;
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-blue-dark);
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 6px;
+    box-shadow: var(--shadow-soft);
 }
 
 .two-columns td {
-    padding-bottom: 1ex;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
 }
 
 .two-columns th:first-child, .two-columns td:first-child {
@@ -41,6 +266,16 @@ table, td, th {
     width: 49%;
 }
 
+/*debug
+table, td, th {
+    border: 1px solid black;
+}*/
+
+/* ============================================
+   SPECIAL COMPONENTS
+   ============================================ */
+
+/* Converse Symbols */
 .converse {
     width: 18%;
     margin: -0.2em 41% 0 41%;
@@ -51,14 +286,16 @@ p.converse {
     font-weight: bold;
     width: 6%;
     margin: -0.8ex 45% -1.2ex 49%;
-    color: var(--header-color);
+    color: var(--primary-blue);
     padding: 0;
 }
 
 svg.converse {
     height: 3em;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
+/* Iwasawa Decomposition Table */
 .iwasawa {
     width: 100%;
     table-layout: fixed;
@@ -67,6 +304,7 @@ svg.converse {
 
 .iwasawa td {
     vertical-align: middle;
+    transition: background-color 0.2s ease;
 }
 
 .iwasawa td svg {
@@ -76,6 +314,8 @@ svg.converse {
 
 .iwasawa td:nth-child(1) {
     width: 5.2em;
+    font-weight: var(--font-weight-medium);
+    color: var(--primary-blue-dark);
 }
 
 .iwasawa td:nth-child(2) {
@@ -115,7 +355,7 @@ svg.converse {
     padding: 0;
 }
 
-.iwasawa tr:nth-child(2) td:nth-child(2) svg, 
+.iwasawa tr:nth-child(2) td:nth-child(2) svg,
 .iwasawa tr:nth-child(2) td:nth-child(3) svg {
     width: 1.5em;
     transform: scale(1.3, 1.4) translateY(-0.1em);
@@ -136,3 +376,111 @@ svg.converse {
 .iwasawa tr:nth-child(3) td:nth-child(2) p {
     padding-bottom: 1ex;
 }
+
+/* ============================================
+   FOOTER & MISCELLANEOUS
+   ============================================ */
+
+/* Title Page Footer Enhancement */
+#title footer {
+    border-top: 2px solid var(--accent-gold);
+    padding-top: 1.5rem;
+}
+
+#title footer li:first-child {
+    color: var(--primary-blue) !important;
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Figure Captions */
+.figcaption {
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.figcaption img {
+    border-radius: 8px;
+    box-shadow: var(--shadow-medium);
+    transition: all 0.3s ease;
+}
+
+.figcaption img:hover {
+    box-shadow: var(--shadow-strong);
+    transform: scale(1.02);
+}
+
+/* Improved Slide Transitions */
+article.current {
+    animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Button Styling */
+header button, #title button {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 0.4rem 0.8rem !important;
+    transition: all 0.2s ease !important;
+}
+
+header button:hover, #title button:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-1px);
+}
+
+/* Professional Scroll Indicator */
+section > *:first-child {
+    animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY & PRINT OPTIMIZATION
+   ============================================ */
+
+/* Better Focus States */
+a:focus, button:focus {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-blue: #003d82;
+        --accent-gold: #9a7b0a;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   END OF PROFESSIONAL STYLESHEET
+   ============================================ */
