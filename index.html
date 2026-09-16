@@ -1,263 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J.L. Carmona</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="files/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="files/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="files/favicon-16x16.png">
-    <link rel="manifest" href="files/site.webmanifest">
-
-    
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" class="stylesheet">
-
-    <script src="code/jax.js" async></script>
-</head> 
-
+    <meta name="description" content="José Luis Carmona Jiménez — mathematician working in differential geometry, homogeneous spaces, conformal geometry and spinorial geometry. Research, publications and contact.">
+    <meta name="theme-color" content="#f8f7f4">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="José Luis Carmona Jiménez | Differential Geometry">
+    <meta property="og:description" content="Research, publications and preprints in differential geometry. Postdoctoral researcher at IMAR, Bucharest.">
+    <title>José Luis Carmona Jiménez | Differential Geometry</title>
+    <link rel="icon" type="image/svg+xml" href="files/favicon.svg">
+    <link rel="stylesheet" href="styles.css?v=4">
+    <script src="code/jax.js" defer></script>
+    <script src="script.js?v=2" defer></script>
+</head>
 <body>
-
-    <!-------------------------- Header Area -------------------------->
-    <header class="header-area">
-        <div class="container">
-            <div class="header">
-               
-                <!-- <a href="" class="logo">
-                    <img src="files/signaturecropped.png" alt="" class="signature">
-                    <i class="fa fa-bolt"></i>
-                </a> -->
-                   
-                <ul class="navbar">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Research interest</a></li>
-                    <li><a href="#projects">Articles</a></li>
-                    <!-- <li><a href="#contact">Contact</a></li> -->
-                </ul>
-                
-                <div class="menu_icon">
-                    <i class="fa fa-bars"></i>
-                </div>
-
-            </div>
-        </div> 
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="wordmark" href="#home" aria-label="José Luis Carmona Jiménez, home">J. L. Carmona Jiménez<span class="wordmark-dot" aria-hidden="true">.</span></a>
+            <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" hidden>Menu <span aria-hidden="true">+</span></button>
+            <nav id="primary-navigation" aria-label="Main navigation">
+                <a href="#about">Research</a>
+                <a href="#news">News</a>
+                <a href="#projects">Publications</a>
+                <a class="nav-cv" href="files/CV_carmona.pdf" target="_blank" rel="noopener noreferrer">CV <span aria-hidden="true">↗</span><span class="sr-only"> (PDF, opens in a new tab)</span></a>
+            </nav>
+        </div>
     </header>
- 
-    <!-------------------------- Home Page -------------------------->
-    <div class="FirstElement" id="home">
-        <div class="profile-photo">
-            <img src="files/foto.jpeg" alt="profile picture">
-        </div>
-        <div class="profile-text">
-            <h5>Hello I'm </h5>
-            <h1>José</h1>
-            <p> Welcome to my personal place!  
-            </p>
-            <p style="margin-top: 20px;">
-                I am a mathematician with a Ph.D. in Differential Geometry from the Complutense University of Madrid (2024), where I worked under the supervision of Professor Marco Castrillón López. My doctoral thesis focused on homogeneous and locally homogeneous spaces, Lie group actions, and invariant connections. My research has advanced the understanding of holonomy and the Ambrose–Singer Theorem, with publications in good journals such as Proceedings of the AMS, Transformation Groups, Annals of Global Analysis and Geometry, and Mediterranean Journal of Mathematics.
-            </p>
-            <p style="margin-top: 20px;">    
-                Currently, I hold a postdoctoral position at the Simion Stoilow Institute of Mathematics of the Romanian Academy (IMAR), funded by the European Union’s PNRR program, where I collaborate with Professors Andrei and Sergiu Moroianu on the project Conformal Aspects of Geometry and Dynamics. My recent contributions (in 2025) include new results on cohomogeneity one manifolds [CCD25], canonical reductive decompositions of extrinsic homogeneous submanifolds [CC25], 
-                and Weyl structures reducible in the direction of the Lee form [Car26].
-            </p>
-            <div class="btn-group">
-                <a href="files/CV_carmona.pdf" class="btn" target="_blank">Download CV</a>
-                <a href="mailto:jcarmona@imar.ro" class="btn">Contact</a>
-            </div>
-
-            <div class="social">
-                <a href="mailto:jcarmona@imar.ro"><i class="fa fa-envelope"></i></a>
-                <a href="https://www.researchgate.net/profile/Jose-Luis-Carmona-Jimenez-2" target="_blank"><i class="fa-brands fa-researchgate"></i></a>
-                <a href="https://orcid.org/0009-0002-3234-1718" target="_blank"><i class="fa-brands fa-orcid"></i></a>
-                <!-- <a href=""><i class="fa-brands fa-linkedin"></i></a> -->
-            </div>
-        </div>
-    </div>
-
-        <!-------------------------- About Section -------------------------->
-    <section class="about-area" id="about">
-        <div class="container">
-            <div class="about">
-                <div style="text-align: justify;" class="about-content">
-                    <h4>Research interest</h4>
-                    <p> Due to their elegance and the insights they offer into the interaction between symmetry and geometry, I am interested in group and pseudo-group actions. In particular, I am specialized in transitive actions, that is, the manifold is homogeneous or locally homogeneous. My general goal is to describe the insights of group actions preserving tensor structures through the study of solutions of a system of covariant derivatives. Specially, I aim to study Ambrose-Singer connections.</p>
-                    <p style="margin-top: 20px;">In parallel, I am also interested in conformal geometry, with a special focus on Weyl connections, as they provide a natural framework to study curvature, holonomy, and invariants beyond the Riemannian setting.</p> 
-
-                </div>
-                                  
-                <div class="about-skills">
-                    <ul>
-                        <li>Name: José Luis</li>
-                        <li>Age: 30</li>     
-                        <li>From: Spain</li>
-                        <li>Email: jcarmona@imar.ro</li>
-                        <li>Research Institute: Simion Stoilow Institute of Mathematics of the Romanian Academy</li>
-                        <li>Address: 21 Calea Grivitei Street, 010702 Bucharest, Romania</li>
-                    </ul>
+    <main id="main" tabindex="-1">
+        <section class="hero container" id="home" aria-labelledby="name">
+            <div class="hero-copy">
+                <p class="eyebrow">Mathematics · Differential geometry</p>
+                <h1 id="name">José Luis<br>Carmona Jiménez</h1>
+                <p class="position">Postdoctoral researcher at <abbr title="Simion Stoilow Institute of Mathematics of the Romanian Academy">IMAR</abbr></p>
+                <p class="hero-description">I study the interplay between connections and geometry, with a focus on homogeneous spaces, conformal structures and spinorial geometry.</p>
+                <div class="hero-actions">
+                    <a class="text-link" href="files/CV_carmona.pdf" target="_blank" rel="noopener noreferrer">Curriculum vitae <span aria-hidden="true">↗</span><span class="sr-only"> (PDF, opens in a new tab)</span></a>
+                    <a class="text-link" href="mailto:jcarmona@imar.ro">jcarmona@imar.ro <span aria-hidden="true">↗</span></a>
                 </div>
             </div>
-        </div>
-    </section>
+            <figure class="portrait">
+                <img src="files/foto.jpeg" alt="José Luis Carmona Jiménez" width="260" height="300" fetchpriority="high">
+                <figcaption>Bucharest, Romania</figcaption>
+            </figure>
+        </section>
 
-        <!-------------------------- Research articles and preprints -------------------------->
-    <section class="project-content" id="projects">
-        <div class="container">
-            <div class="project-title">
-                <h4>Articles and manuscripts</h4>
-                <!-- <p>These are my three more relevant publications and below you can find the complete list of publications.</p> -->
-            </div>
-            <div class="projects">
-                <!-- 1st Project -->
-                <div class="project">
-                    <!-- <i class="fa fa-coffee"></i> --> 
-                    <h5><span style="font-style: normal; font-weight: bold;">[CGS26]</span> Manuscript</h5>
-                    <h4>Kenmotsu manifolds and spin-c Killing spinors</h4>
-                    <h3>J.L. Carmona Jiménez, A. Gil-García, C.S. Shahbazi</h3>
-                    <p> Using the theory of complex spinorial forms, we prove that an odd-dimensional Riemannian manifold admits a pure spin-c Killing spinor with an imaginary Killing function $i\mu$ if and only if it is an exact $\mu$-Kenmotsu manifold, thereby obtaining an extension of a recent result by the first named author that, under the purity assumption, does not require simple connectivity or completeness. We then reinterpret $\mu$-Kenmotsu manifolds in terms of metric connections with vectorial torsion and give a second proof of this characterization, combining the theory of complex spinorial forms with the theory of metric connections with torsion. Finally, we describe the global structure of exact $\mu$-Kenmotsu manifolds by means of Morse-Bott theory.
-                    </p>
-                    <a href="https://arxiv.org/abs/2608.19108" target="_blank">arXiv</a>
-                </div>
-                <!-- 1st Project -->
-                <div class="project">
-                    <!-- <i class="fa fa-coffee"></i> --> 
-                    <h5><span style="font-style: normal; font-weight: bold;">[Car26*]</span> Manuscript</h5>
-                    <h4>On generalized imaginary Spin$^c$-Killing spinors</h4>
-                    <h3>J.L. Carmona Jiménez</h3>
-                    <p> A non-trivial spinor field $\psi$ is called a generalized imaginary $\mathrm{Spin}^c$-Killing spinor if $\nabla^{g,A} _X \psi = i\mu X \cdot \psi$ for all vector fields $X$, where $\mu$ is a real function that is not identically zero and $\nabla^{g,A}$ is the $\mathrm{Spin}^c$ Levi-Civita connection with $\mathrm{U}(1)$-connection $A$.
-                    Associated with $\psi$ is a vector field $V$, the Dirac current, defined by $g(V,X) = i \langle X\cdot \psi, \psi \rangle$.
-                    We prove that if $V$ vanishes somewhere and $\mathrm{dim} M \geq 3$, the manifold is locally isometric to real hyperbolic space.
-                    When $V$ never vanishes and $\mathrm{dim} M \geq 3$, we obtain a global geometric description of all $\mathrm{Spin}^c$-Riemannian manifolds carrying such spinors, under the assumption that either the normalized Dirac current $\xi = \frac{V}{|V|}$ is complete or the leaves of $\mathcal{D} = \mathrm{ker}(\xi^\flat)$ are complete. Finally, we reinterpret the case of type~I generalized imaginary $\mathrm{Spin}^c$-Killing spinors in terms of parallel spinors for a suitable connection with vectorial torsion.
-                    </p>
-                    <a href="https://arxiv.org/abs/2605.07813" target="_blank">arXiv</a>
-                </div>
-                <!-- 1st Project -->
-                <div class="project">
-                    <!-- <i class="fa fa-coffee"></i> -->
-                    <h5><span style="font-style: normal; font-weight: bold;">[Car26]</span> Proc. Amer. Math. Soc. (2026)</h5>
-                    <h4>On Weyl structures reducible in the direction of the Lee form</h4>
-                    <h3>J.L. Carmona Jiménez</h3>
-                    <p> A Weyl structure on a Riemannian manifold $(M,g)$ is a torsion-free linear connection $\nabla$ such that there is a $1$-form $\theta$ (called the Lee form) satisfying $\nabla g = 2\, \theta \otimes g$. 
-                        We examine the case in which there exists a $\nabla$-parallel distribution of codimension $1$ on which the Lee form vanishes identically. We prove that if $(M,g)$ is complete with $\theta$ closed, then the Weyl structure must be flat or exact. 
-                        We apply this to show that every homogeneous Kenmotsu manifold is isometric to the real hyperbolic space.
-                    </p>
-                    <a href="https://doi.org/10.1090/proc/17755"  target="_blank">DOI: 10.1090/proc/17755</a>
-                    <a href="https://arxiv.org/abs/2507.17496" target="_blank">arXiv</a>
-                </div>
-                <!-- 1st Project -->
-                <div class="project">
-                    <!-- <i class="fa fa-coffee"></i> -->
-                    <h5><span style="font-style: normal; font-weight: bold;">[CCD25]</span> Transformation Groups (2025)</h5>
-                    <h4>The Ambrose-Singer Theorem for Cohomogeneity one Riemannian manifolds</h4>
-                    <h3>J.L. Carmona Jiménez, M. Castrillón López, J.C. Díaz Ramos</h3>
-                    <p> We characterize isometric actions whose principal orbits are hypersurfaces through the existence of a linear 
-                        connection satisfying a set of covariant equations in the same spirit as the Ambrose-Singer Theorem for homogeneous space. 
-                        These results are then used to describe isometric cohomogeneity one foliations in terms of such connections. 
-                        Finally, we provide explicit examples of these objects in Euclidean spaces and real hyperbolic spaces.
-                    </p>
-                    <a href="https://link.springer.com/article/10.1007/s00031-025-09927-x"  target="_blank">DOI: 10.1007/s00031-025-09927-x</a>
-                    <a href="https://arxiv.org/abs/2312.16934" target="_blank">arXiv</a>
-                </div>
-                <!-- 1st Project -->
-                <div class="project">
-                    <!-- <i class="fa fa-coffee"></i> -->
-                    <h5><span style="font-style: normal; font-weight: bold;">[CC25]</span> Note di Matematica </h5>
-                    <h4>Canonical Reductive Decomposition of Extrinsic Homogeneous Submanifolds</h4>
-                    <h3>J.L. Carmona Jiménez, M. Castrillón López</h3>
-                    <p> Let $\bar{M}=\bar{G}/\bar{H}$ be a homogeneous Riemannian manifold. 
-                        Given a Lie subgroup $G\subset \bar{G}$ and a reductive decomposition of the homogeneous structure of $\bar{M}$, 
-                        we analyze a canonical reductive decomposition for the orbits of the action of $G$. 
-                        These leaves of the $G$-action are extrinsic homogeneous submanifolds and the analysis of the reductive decomposition of them is related with their extrinsic properties. 
-                        We connect the study with works in the literature and initiate the relationship with the Ambrose-Singer theorem and homogeneous structures of submanifolds.</p>
-                    <a href="http://siba-ese.unisalento.it/index.php/notemat/article/view/32403"  target="_blank">DOI: 10.1285/i15900932v45s1p117 </a>
-                    <a href="https://arxiv.org/abs/2506.05580" target="_blank">arXiv</a>
-                </div>
-                <!-- 1st Project -->
-                <div class="project">
-                    <!-- <i class="fa fa-coffee"></i> -->
-                    <h5>PhD Thesis (2024)</h5>
-                    <h4>Homogeneous descriptions and families of homogeneous structures</h4>
-                    <h3>J.L. Carmona Jiménez</h3>
-                    <p> In this thesis, the object of study is homogeneous spaces, and we apply techniques derived
-                        from the Tricerri-Vanhecke program. First, we characterize all the
-                        homogeneous structures of the complex hyperbolic space. Afterwards, we examine the process
-                        of reduction of homogeneous structures when the fibre of the reduction is one-dimensional.
-                        We turn to a non-metric framework and we generalize the Ambrose-Singer Theorem with the
-                        presence of a finite set of invariant tensors, eliminating the requirement of a metric. 
-                        Moreover, we apply those results to symplectic homogeneous spaces.
-                        We finish with non-transitive actions, we prove that the existence of a Riemannian cohomogeneity one action is
-                        equivalent to the existence of a tensor satisfying a system of covariant equations. 
-                    </p>
-                    <a href="files/thesis.pdf" target="_blank">PDF</a>
-                    <a href="Diapositivas-Thesis-Definitivas/index.html" target="_blank">Slides of the Defense</a>
-                </div>
-                 <!-- 2nd Project -->
-                 <div class="project">
-                    <h5><span style="font-style: normal; font-weight: bold;">[CC22]</span> Mediterr. J. Math. 19, 280 (2022).</h5>
-                    <h4>The Ambrose–Singer Theorem for General Homogeneous Manifolds with Applications to Symplectic Geometry. </h4>
-                    <h3>J.L. Carmona Jiménez, M. Castrillón López</h3>
-                    <p>The main Theorem of this article provides a characterization of reductive homogeneous spaces equipped with some 
-                        geometric structure (not necessarily pseudo-Riemannian) in terms of the existence of certain connection. 
-                        This result generalizes the well-known Theorem of Ambrose and Singer for Riemannian homogeneous spaces 
-                        (Ambrose and Singer in Duke Math J 25(4):647–669, 1958). We relax the conditions in this theorem and prove a 
-                        characterization of reductive locally homogeneous manifolds. 
-                        Finally, we apply these results to classify, with explicit expressions, reductive locally homogeneous almost 
-                        symplectic, symplectic and Fedosov manifolds.</p>
-                    <a href="https://link.springer.com/article/10.1007/s00009-022-02197-x"  target="_blank">DOI: 10.1007/s00009-022-02197-x</a>
-                    <a href="https://arxiv.org/abs/2001.06254"  target="_blank">arXiv</a>
-                </div>
-                <!-- 3rd Project -->
-                <div class="project">
-                    <!-- <i class="fa fa-desktop"></i> -->
-                    <h5><span style="font-style: normal; font-weight: bold;">[CC22*]</span> Ann. Glob. Anal. Geom. 62, (2022)</h5>
-                    <h4>The homogeneous holonomies of complex hyperbolic space.</h4>
-                    <h3>J.L. Carmona Jiménez, M. Castrillón López</h3>
-                    <p>We describe the holonomy algebras of all canonical connections and their action on complex hyperbolic spaces $\mathbb{C}\mathrm{H}(n)$
-                        in all dimensions ($n\in\mathbb{N}$). This thorough investigation yields a formula for all Kähler homogeneous structures on complex hyperbolic spaces. Finally, we have related the belonging of the homogeneous structures to the different Tricerri and Vanhecke’s (or Abbena and Garbiero’s) orthogonal and irreducible 
-                       $\mathrm{U}(n)$-submodules with concrete and determined expressions of the holonomy.</p>
-                    <a href="https://link.springer.com/article/10.1007/s10455-022-09852-2"  target="_blank">DOI: 10.1007/s10455-022-09852-2</a>
-                    <a href="https://arxiv.org/abs/2112.05453"  target="_blank">arXiv</a>
-                </div>
-                <!-- 4th Article -->
-                <div class="project">
-                    <!-- <i class="fa fa-desktop"></i> -->
-                    <h5><span style="font-style: normal; font-weight: bold;">[CC20]</span> Axioms, 9(3):94 (2020).</h5>
-                    <h4>Reduction of Homogeneous Pseudo-Kähler Structures by One-Dimensional Fibers</h4>
-                    <h3>J.L. Carmona Jiménez, M. Castrillón López</h3>
-                    <p>We study the reduction procedure applied to pseudo-Kähler manifolds by a one dimensional Lie group acting by isometries and preserving the complex tensor. We endow the quotient manifold with an almost contact metric structure. We use this fact to connect pseudo-Kähler homogeneous structures with almost contact metric homogeneous structures. This relation will have consequences in the class of the almost contact manifold. Indeed, if we choose a pseudo-Kähler homogeneous structure of linear type, then the reduced, almost contact homogeneous structure is of linear type and the reduced manifold is of type 
-                        $\mathcal{C}_5 \oplus \mathcal{C_6} \oplus \mathcal{C}_{12}$ of Chinea-González classification.</p>
-                    <a href="https://www.mdpi.com/2075-1680/9/3/94"  target="_blank">DOI: 10.3390/axioms9030094</a>
+        <section class="research-section section" id="about" aria-labelledby="research-title">
+            <div class="container">
+                <div class="section-heading"><p class="eyebrow">Research &amp; background</p><h2 id="research-title">Geometry through connections.</h2></div>
+                <div class="research-layout">
+                    <div class="biography">
+                        <p>My research lies in differential geometry, with particular emphasis on geometric structures, symmetry, conformal geometry, and linear connections. I investigate how geometrical properties in differential geometry can be detected and characterized through distinguished linear connections beyond the Levi-Civita framework. The guiding idea is that important global geometric properties are often encoded not directly by the metric, but by auxiliary connections whose curvature, torsion, and holonomy reveal hidden homogeneous or conformal structures. Examples of the connections I studied are Ambrose-Singer connections in homogeneous geometry or Weyl structures in conformal geometry.</p>
+                    </div>
+                    <div class="research-topics" aria-label="Research interests">
+                        <div class="topic"><span class="topic-number" aria-hidden="true">01</span><div><h3>Homogeneous geometry</h3><p>Group and pseudo-group actions, invariant connections and Ambrose–Singer characterizations.</p></div></div>
+                        <div class="topic"><span class="topic-number" aria-hidden="true">02</span><div><h3>Conformal geometry</h3><p>Weyl connections, curvature and holonomy beyond the Riemannian setting.</p></div></div>
+                        <div class="topic"><span class="topic-number" aria-hidden="true">03</span><div><h3>Spinorial geometry</h3><p>Generalized imaginary Spin$^c$-Killing spinors, Kenmotsu manifolds and connections with torsion.</p></div></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-        <!-------------------------- Contact Me -------------------------->
-
-    <!-- <section class="contact-content" id="contact">
-        <div class="container">
-            <div class="contact-title">
-                <h4>Contact Me</h4>
-                <p>Get In Touch</p>
+        <section class="section news-section" id="news" aria-labelledby="news-title">
+            <div class="container">
+                <div class="section-heading"><p class="eyebrow">Latest updates</p><h2 id="news-title">News</h2></div>
+                <ul class="news-list">
+                    <li><time datetime="2027-01"><span class="news-status">Upcoming</span> January 2027</time><span>I was awarded an Oberwolfach Leibniz Fellowship at the Mathematisches Forschungsinstitut Oberwolfach, Germany.</span></li>
+                    <li><time datetime="2026-10"><span class="news-status">Upcoming</span> October 2026</time><span>I was awarded a Riemann Fellowship at Leibniz Universität Hannover, Germany.</span></li>
+                    <li><time datetime="2026-09"><span class="news-status">Upcoming</span> September 2026</time><span>I was invited to give a talk at the workshop: <em>HOPS in Bari 2026</em> — <a href="https://sites.google.com/view/hopsinbari2026/home-page" target="_blank" rel="noopener noreferrer">event details<span class="sr-only"> (opens in a new tab)</span></a>.</span></li>
+                    <li><time datetime="2026-08">August 2026</time><span>We posted a new preprint: <cite>Kenmotsu manifolds and spin-c Killing spinors</cite>, now available on <a href="https://arxiv.org/abs/2608.19108" target="_blank" rel="noopener noreferrer">arXiv: 2608.19108<span class="sr-only"> (opens in a new tab)</span></a>.</span></li>
+                </ul>
             </div>
-            <div class="contact">
-                <form name="submitToGoogleSheet">
-                    <input type="text" name="NAME" placeholder="Name" required>
-                    <input type="email" name="EMAIL" placeholder="Email" required>
-                    <input type="text" name="SUBJECT" placeholder="Subject">
-                    <textarea name="MESSAGE" placeholder="Message"></textarea>
-                    <input type="submit" value="Send Message" class="submit">
-                </form>
-                <span id="msg"></span>
-            </div>
-        </div>
-    </section> -->
-        
-    <!-------------------------- JS -------------------------->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="script.js"></script>
+        </section>
 
+        <section class="section publications-section container" id="projects" aria-labelledby="publications-title">
+            <div class="section-heading"><h2 id="publications-title">Publications &amp; manuscripts</h2></div>
+            <ol class="bibliography">
+                <li>J.L. Carmona Jiménez, A. Gil-García, C.S. Shahbazi. <cite>Kenmotsu manifolds and spin-c Killing spinors</cite>. Preprint (2026); <span class="reference-links"><a href="https://arxiv.org/abs/2608.19108" target="_blank" rel="noopener noreferrer">arXiv: 2608.19108<span class="sr-only"> (opens in a new tab)</span></a></span>.</li>
+                <li>J.L. Carmona Jiménez. <cite>On generalized imaginary Spin$^c$-Killing spinors</cite>. Preprint (2026); <span class="reference-links"><a href="https://arxiv.org/abs/2605.07813" target="_blank" rel="noopener noreferrer">arXiv: 2605.07813<span class="sr-only"> (opens in a new tab)</span></a></span>.</li>
+                <li>J.L. Carmona Jiménez. <cite>On Weyl structures reducible in the direction of the Lee form</cite>. <em>Proceedings of the American Mathematical Society</em> (2026); <span class="reference-links"><a href="https://doi.org/10.1090/proc/17755" target="_blank" rel="noopener noreferrer">DOI: 10.1090/proc/17755<span class="sr-only"> (opens in a new tab)</span></a> · <a href="https://arxiv.org/abs/2507.17496" target="_blank" rel="noopener noreferrer">arXiv: 2507.17496<span class="sr-only"> (opens in a new tab)</span></a></span>.</li>
+                <li>J.L. Carmona Jiménez, M. Castrillón López, J.C. Díaz Ramos. <cite>The Ambrose-Singer theorem for cohomogeneity one Riemannian manifolds</cite>. <em>Transformation Groups</em> (2025); <span class="reference-links"><a href="https://doi.org/10.1007/s00031-025-09927-x" target="_blank" rel="noopener noreferrer">DOI: 10.1007/s00031-025-09927-x<span class="sr-only"> (opens in a new tab)</span></a> · <a href="https://arxiv.org/abs/2312.16934" target="_blank" rel="noopener noreferrer">arXiv: 2312.16934<span class="sr-only"> (opens in a new tab)</span></a></span>.</li>
+                <li>J.L. Carmona Jiménez, M. Castrillón López. <cite>Canonical reductive decomposition of extrinsic homogeneous submanifolds</cite>. <em>Note di Matematica</em> (2025); <span class="reference-links"><a href="https://doi.org/10.1285/i15900932v45s1p117" target="_blank" rel="noopener noreferrer">DOI: 10.1285/i15900932v45s1p117<span class="sr-only"> (opens in a new tab)</span></a> · <a href="https://arxiv.org/abs/2506.05580" target="_blank" rel="noopener noreferrer">arXiv: 2506.05580<span class="sr-only"> (opens in a new tab)</span></a></span>.</li>
+                <li>J.L. Carmona Jiménez, M. Castrillón López. <cite>The Ambrose–Singer theorem for general homogeneous manifolds with applications to symplectic geometry</cite>. <em>Mediterranean Journal of Mathematics</em>, 19, 280 (2022); <span class="reference-links"><a href="https://doi.org/10.1007/s00009-022-02197-x" target="_blank" rel="noopener noreferrer">DOI: 10.1007/s00009-022-02197-x<span class="sr-only"> (opens in a new tab)</span></a> · <a href="https://arxiv.org/abs/2001.06254" target="_blank" rel="noopener noreferrer">arXiv: 2001.06254<span class="sr-only"> (opens in a new tab)</span></a></span>.</li>
+                <li>J.L. Carmona Jiménez, M. Castrillón López. <cite>The homogeneous holonomies of complex hyperbolic space</cite>. <em>Annals of Global Analysis and Geometry</em>, 62 (2022); <span class="reference-links"><a href="https://doi.org/10.1007/s10455-022-09852-2" target="_blank" rel="noopener noreferrer">DOI: 10.1007/s10455-022-09852-2<span class="sr-only"> (opens in a new tab)</span></a> · <a href="https://arxiv.org/abs/2112.05453" target="_blank" rel="noopener noreferrer">arXiv: 2112.05453<span class="sr-only"> (opens in a new tab)</span></a></span>.</li>
+                <li>J.L. Carmona Jiménez, M. Castrillón López. <cite>Reduction of homogeneous pseudo-Kähler structures by one-dimensional fibers</cite>. <em>Axioms</em>, 9(3), 94 (2020); <span class="reference-links"><a href="https://doi.org/10.3390/axioms9030094" target="_blank" rel="noopener noreferrer">DOI: 10.3390/axioms9030094<span class="sr-only"> (opens in a new tab)</span></a></span>.</li>
+            </ol>
+        </section>
+
+    </main>
+    <footer class="site-footer container"><p>José Luis Carmona Jiménez</p><a href="#home">Back to top <span aria-hidden="true">↑</span></a></footer>
 </body>
 </html>
